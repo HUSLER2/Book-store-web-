@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Книжный магазин | Каталог книг</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Подключаем шрифт Google Fonts для современного вида -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">📚 Книжный мир</h1>
+            <p class="tagline">Лучшие книги по доступным ценам</p>
+        </div>
+    </header>
+
+    <main class="main container">
+        <!-- Блок поиска -->
+        <section class="search-section">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Поиск по названию или автору..." class="search-input">
+            </div>
+        </section>
+
+        <!-- Сетка карточек книг -->
+        <section class="catalog-section">
+            <h2 class="section-title">Наш каталог</h2>
+            <div id="booksContainer" class="books-grid">
+                <!-- Карточки будут добавлены динамически через JavaScript -->
+                <p class="loading-message">Загрузка книг...</p>
+            </div>
+        </section>
+
+        <!-- Форма добавления новой книги -->
+        <section class="add-book-section">
+            <h2 class="section-title">Добавить новую книгу</h2>
+            <form id="addBookForm" class="book-form">
+                <div class="form-group">
+                    <label for="title">Название книги *</label>
+                    <input type="text" id="title" placeholder="Например: Мастер и Маргарита" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Автор *</label>
+                    <input type="text" id="author" placeholder="Например: Михаил Булгаков" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Год издания *</label>
+                    <input type="number" id="year" placeholder="2023" min="0" max="2025" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Цена (руб.) *</label>
+                    <input type="number" id="price" placeholder="500" min="0" step="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary">➕ Добавить книгу</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Всего книг в каталоге: <span id="bookCount">0</span></p>
+            <p>© 2026 Книжный магазин. Проект для курсовой.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
